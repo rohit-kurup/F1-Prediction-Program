@@ -2,7 +2,7 @@ public class Race{
     // Attributes of the class 
     private String name;
     private int laps;
-    private int lapLength;
+    private double lapLength; // in kilometers
     private String location;
     private String weatherCondition;
     private String date;
@@ -32,13 +32,25 @@ public class Race{
         }
     
 
-    public Race(String name, int laps, int lapLength, String location){
+    public Race(String name, int laps, double lapLength, String location){
         this.name = name;
         this.laps = laps;
         this.lapLength = lapLength;
         this.location = location;
         this.weatherCondition = "Sunny";
-        this.date = None;
+        this.date = "2021-09-05";
+        this.typeOfRace = "Grand Prix";
+        this.isSprintRace = false;
+        this.isNightRace = false;
+    }
+
+    public Race(){
+        this.name = "Race";
+        this.laps = 71;
+        this.lapLength = 4.326;
+        this.location = "Austria";
+        this.weatherCondition = "Sunny";
+        this.date = "2021-09-05";
         this.typeOfRace = "Grand Prix";
         this.isSprintRace = false;
         this.isNightRace = false;
@@ -61,11 +73,11 @@ public class Race{
         this.laps = laps;
     }
 
-    public int getLapLength() {
+    public double getLapLength() {
         return lapLength;
     }
 
-    public void setLapLength(int lapLength) {
+    public void setLapLength(double lapLength) {
         this.lapLength = lapLength;
     }
 
@@ -129,9 +141,11 @@ public class Race{
             "typeOfRace: " + typeOfRace + "\n" +
             "isSprintRace: " + isSprintRace + "\n" +
             "isNightRace: " + isNightRace + "\n"
-            )
+        );
         
     }
+
+
 
 
 }
