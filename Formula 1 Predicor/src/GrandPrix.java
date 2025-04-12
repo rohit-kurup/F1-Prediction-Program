@@ -1,4 +1,3 @@
-
 public class GrandPrix extends Race {
     private boolean hasDRSZones;
     private int numberOfPitStops;
