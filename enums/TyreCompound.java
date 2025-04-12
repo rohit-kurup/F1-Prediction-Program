@@ -1,3 +1,4 @@
+package enums;
 public enum TyreCompound {
     SOFT(0.95, 0.03),
     MEDIUM(0.85, 0.02),

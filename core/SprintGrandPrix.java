@@ -1,3 +1,4 @@
+package core;
 public class SprintGrandPrix extends GrandPrix {
     private int sprintDistance; // in laps
 

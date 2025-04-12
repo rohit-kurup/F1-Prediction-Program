@@ -1,4 +1,8 @@
+
 import java.util.*;
+
+import driver.Driver;
+import enums.TyreCompound;
 
 public class GrandPrix extends Race {
     private Map<Driver, Double> totalTimes;
@@ -8,7 +12,7 @@ public class GrandPrix extends Race {
     public GrandPrix(String name, int laps, double lapLength, String location, String weatherCondition, String date) {
         super(name, laps, lapLength, location, weatherCondition, date);
         this.totalTimes = new HashMap<>();
-        this.pitStops = new HashMap<>();
+        this.pitStops = ne HashMap<>();
         this.tyreStrategies = new HashMap<>();
     }
 

@@ -1,4 +1,8 @@
+package core;
 import java.util.*;
+
+import driver.Driver;
+import driver.TyreCompound;
 
 public class Qualifying extends Race {
     private Map<Driver, Double> lapTimes; // One lap per driver

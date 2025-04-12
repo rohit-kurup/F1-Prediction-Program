@@ -1,3 +1,6 @@
+import enums.TyreCompound;
+
+package driver;
 public class Tyre {
     private TyreCompound compound;
     private double currentGrip;

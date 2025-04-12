@@ -1,3 +1,6 @@
+package core;
+import driver.TyreCompound;
+
 public class SprintQualifying extends Qualifying {
     private int sprintLaps;
 

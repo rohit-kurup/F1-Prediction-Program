@@ -1,3 +1,4 @@
+package core;
 public class Race{
     // Attributes of the class 
     private String name;
