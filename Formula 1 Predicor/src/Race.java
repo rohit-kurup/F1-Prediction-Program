@@ -1,41 +1,53 @@
 public class Race {
     private String name;
+    private String location;
+    private TrackType trackType;
     private int laps;
     private double lapLength;
-    private String location;
-    private String weatherCondition;
-    private String date;
-    private String typeOfRace;
-    private boolean isSprintRace;
+    private String weather;
     private boolean isNightRace;
 
-    public Race(String name, int laps, double lapLength, String location, String weatherCondition, String date) {
+    public Race(String name, String location, TrackType trackType, int laps, double lapLength, String weather, boolean isNightRace) {
         this.name = name;
+        this.location = location;
+        this.trackType = trackType;
         this.laps = laps;
         this.lapLength = lapLength;
-        this.location = location;
-        this.weatherCondition = weatherCondition;
-        this.date = date;
-        this.typeOfRace = "Grand Prix";
-        this.isSprintRace = false;
-        this.isNightRace = false;
+        this.weather = weather;
+        this.isNightRace = isNightRace;
     }
 
-    public Race() {
-        this("Unnamed", 50, 5.0, "Unknown", "Sunny", "2025-01-01");
+    public String getName() {
+        return name;
     }
 
-    public String getName() { return name; }
-    public int getLaps() { return laps; }
-    public double getLapLength() { return lapLength; }
-    public String getLocation() { return location; }
-    public String getWeatherCondition() { return weatherCondition; }
-    public String getDate() { return date; }
-    public boolean isSprintRace() { return isSprintRace; }
-    public boolean isNightRace() { return isNightRace; }
+    public String getLocation() {
+        return location;
+    }
+
+    public TrackType getTrackType() {
+        return trackType;
+    }
+
+    public int getLaps() {
+        return laps;
+    }
+
+    public double getLapLength() {
+        return lapLength;
+    }
+
+    public String getWeather() {
+        return weather;
+    }
+
+    public boolean isNightRace() {
+        return isNightRace;
+    }
 
     @Override
     public String toString() {
-        return name + " at " + location + " on " + date;
+        return "Race: " + name + ", Location: " + location + ", TrackType: " + trackType +
+               ", Laps: " + laps + ", Weather: " + weather + ", Night Race: " + isNightRace;
     }
 }

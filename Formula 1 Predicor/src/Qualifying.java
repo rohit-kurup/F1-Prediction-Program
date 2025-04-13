@@ -3,9 +3,8 @@ import java.util.Map;
 public class Qualifying extends Race {
     private Map<Driver, Double> qualifyingTimes;
 
-    public Qualifying(String name, int laps, double lapLength, String location, String weatherCondition, String date,
-                      Map<Driver, Double> qualifyingTimes) {
-        super(name, laps, lapLength, location, weatherCondition, date);
+    public Qualifying(String name, String location, TrackType trackType, int laps, double lapLength, String weather, boolean isNightRace, Map<Driver, Double> qualifyingTimes) {
+        super(name, location, trackType, laps, lapLength, weather, isNightRace);
         this.qualifyingTimes = qualifyingTimes;
     }
 

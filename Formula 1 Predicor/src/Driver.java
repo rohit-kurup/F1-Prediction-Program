@@ -3,14 +3,21 @@ import java.util.Map;
 public class Driver {
     private String name;
     private String team;
-    private int ranking;
-    private Map<String, Double> performanceInConditions;
+    private int experienceYears;
+    private double averageQualifyingPosition;
+    private double averageRacePosition;
+    private Map<TrackType, Double> performanceByTrackType;
+    private Map<String, Double> performanceByWeather; // e.g. "Wet" → 0.85
 
-    public Driver(String name, String team, int ranking, Map<String, Double> performanceInConditions) {
+    public Driver(String name, String team, int experienceYears, double avgQuali, double avgRace,
+                  Map<TrackType, Double> performanceByTrackType, Map<String, Double> performanceByWeather) {
         this.name = name;
         this.team = team;
-        this.ranking = ranking;
-        this.performanceInConditions = performanceInConditions;
+        this.experienceYears = experienceYears;
+        this.averageQualifyingPosition = avgQuali;
+        this.averageRacePosition = avgRace;
+        this.performanceByTrackType = performanceByTrackType;
+        this.performanceByWeather = performanceByWeather;
     }
 
     public String getName() {
@@ -21,16 +28,29 @@ public class Driver {
         return team;
     }
 
-    public int getRanking() {
-        return ranking;
+    public int getExperienceYears() {
+        return experienceYears;
     }
 
-    public Map<String, Double> getPerformanceInConditions() {
-        return performanceInConditions;
+    public double getAverageQualifyingPosition() {
+        return averageQualifyingPosition;
+    }
+
+    public double getAverageRacePosition() {
+        return averageRacePosition;
+    }
+
+    public double getPerformanceOnTrack(TrackType type) {
+        return performanceByTrackType.getOrDefault(type, 1.0);
+    }
+
+    public double getPerformanceInWeather(String weather) {
+        return performanceByWeather.getOrDefault(weather, 1.0);
     }
 
     @Override
     public String toString() {
-        return name + " - " + team + " [Rank: " + ranking + "]";
+        return "Driver: " + name + ", Team: " + team + ", Experience: " + experienceYears +
+               ", Avg Quali Pos: " + averageQualifyingPosition + ", Avg Race Pos: " + averageRacePosition;
     }
 }
